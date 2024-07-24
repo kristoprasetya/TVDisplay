@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Background Image</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .bg {
+            background-image: url('background2.jpg');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+
+        .greeting {
+            font-size: 40px; /* Adjust size as needed */
+            font-weight: normal;
+        }
+
+        .jnj {
+            font-size: 40px; /* Adjust size as needed */
+            font-weight: bold;
+        }
+
+        .patient-info {
+            font-size: 100px; /* Adjust size as needed */
+            font-weight: bold;
+        }
+
+        .home-link {
+            position: absolute;
+            top: 40px; /* Move down */
+            right: 40px; /* Move to the left */
+            color: white;
+            text-decoration: none;
+            font-size: 20px; /* Make font size larger */
+            font-weight: bold;
+            text-transform: uppercase; /* Make text uppercase */
+        }
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div id="patientGreeting">
+            <span class="greeting">WELCOME TO </span>
+            <span class="jnj">JNJ SPECIALIST DENTAL CENTRE</span><br>
+            <span class="patient-info"></span>
+        </div>
+        <a href="main.html" class="home-link">Home</a>
+    </div>
+    <script>
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                  results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        const patientName = getParameterByName('patientName');
+        const patientTitle = getParameterByName('patientTitle');
+        document.querySelector('.patient-info').innerText = `${patientTitle} ${patientName}`;
+    </script>
+</body>
+</html>

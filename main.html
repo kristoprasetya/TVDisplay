@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>J&J Dental Care</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.jpg" class="logo">
+            <ul>
+                <!-- <li><a href="D:\JJDental\last.html">Home</a></li> -->
+            </ul>
+        </div>
+
+        <div class="content">
+            <br>
+            <br>
+            <br>
+            <h1>J&J Specialist Dental Centre</h1>
+            <div>
+                <button type="button" onclick="showForm('', 'Mr.')"><span></span>PRIA</button>
+                <button type="button" onclick="showForm('', 'Ms.')"><span></span>WANITA</button>
+                <button type="button" onclick="showForm('', '')"><span></span>ANAK</button>
+            </div>
+
+            <hr class="custom-hr">
+            <p>PANDUAN<br><br><br></p>
+            <h2>1. Pilih jenis kelamin pasien
+            <br>2. Input nama pasien lalu klik tombol INPUT
+            <br>3. Klik F11 untuk Fullscreen</h2>
+        </div>
+
+        <div class="tvdisplay">
+            TV DISPLAY PATIENT GENERATOR
+            <br><br>
+
+        </div>
+    </div>
+
+    <div id="patientForm" class="form-container" style="display: none;">
+        <div class="form-box">
+            <h2 id="formTitle">Nama Pasien</h2>
+            <label for="patientName">Masukan Nama Pasien:</label><br>
+            <input type="text" id="patientName" name="patientName"><br>
+            <button onclick="cancelForm()">CANCEL</button>
+            <button onclick="submitForm()">INPUT</button>
+        </div>
+    </div>
+
+    <div id="greetingSection" class="greeting-section" style="display: none;">
+        <h2 id="patientGreeting"></h2>
+    </div>
+
+    <script src="function.js"></script>
+</body>
+</html>
